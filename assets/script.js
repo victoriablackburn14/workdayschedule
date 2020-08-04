@@ -1,8 +1,20 @@
 var currentDay=document.querySelector("#currentDay");
-var weekday=['Sunday','Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+var newDate=(new Date());
+var myEvent=document.querySelector(".myEvent");
+var storedEvent= localStorage.getItem("myEvent");
+var button=document.querySelector("button");
 
-function displaycurrentDay(){    
-currentDay=$(moment().weekday());
-console.log(currentDay);
-$("#currentDay").append(currentDay);
+console.log(new Date());
+document.getElementById("currentDay").innerHTML=newDate.toLocaleString();
+
+
+function store(){
+    myEvent=document.getElementById("myEvent");
+    localStorage.setItem("myEvent", InputEvent.value);
+    console.log(myEvent);
 }
+//having trouble running the user local storage
+
+$(button).on("click", function(){
+localStorage.setItem("myEvent", InputEvent.value);
+});
